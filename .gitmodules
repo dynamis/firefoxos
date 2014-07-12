@@ -1,0 +1,3 @@
+[submodule "compare-locales"]
+	path = compare-locales
+	url = git@github.com:Pike/compare-locales.git
