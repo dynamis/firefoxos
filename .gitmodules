@@ -1,3 +1,9 @@
 [submodule "compare-locales"]
 	path = compare-locales
 	url = git@github.com:Pike/compare-locales.git
+[submodule "gaia-l10n/en-US"]
+	path = gaia-l10n/en-US
+	url = ssh://gitolite3@git.mozilla.org/releases/l10n/en-US/gaia.git
+[submodule "gaia-l10n/ja"]
+	path = gaia-l10n/ja
+	url = ssh://gitolite3@git.mozilla.org/releases/l10n/ja/gaia.git
