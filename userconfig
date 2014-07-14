@@ -1,0 +1,94 @@
+userconfig_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+
+####	Build Environment
+# Select Compiler
+export CC=gcc-4.6
+export CXX=g++-4.6
+
+# Directories and Path
+#export B2G_DIR=${B2G_DIR:-$(cd $(dirname $0); pwd)}
+#export GECKO_PATH=${GECKO_PATH:-$(cd gecko; pwd)}
+#export GAIA_PATH=${GAIA_PATH:-$(cd gaia; pwd)}
+#export GECKO_OBJDIR=${GECKO_PATH}/objdir-gonk
+
+# compare-locales Tool Path
+export PATH="$PATH:$userconfig_dir/compare-locales/scripts"
+export PYTHONPATH="$userconfig_dir/compare-locales/lib"
+
+####	Debug Config
+# Debug Build
+#export B2G_DEBUG=1
+
+# Profiling Build
+#export MOZ_PROFILING=1
+
+# Disable Optimizer
+#export B2G_NOOPT=1
+
+# Enable Valgrind Memory Debugger
+#export B2G_VALGRIND=1
+
+
+####	Build Config
+# Make Official Branding Build
+export MOZILLA_OFFICIAL=1
+export PRODUCTION=1
+#export DOGFOOD=1
+
+# Target Application Set
+# GAIA_APP_TARGET = production|engineering|demo|dogfood
+#export GAIA_APP_TARGET=production
+
+# Device Type
+# GAIA_DEVICE_TYPE=phone|tablet
+#export GAIA_DEVICE_TYPE=phone
+
+# VARIANT = eng|user|userdebug
+# eng: Marionette is enabled
+#export VARIANT=eng
+
+# Install Apps into /system/b2g, not /data/local
+#export B2G_SYSTEM_APPS=1
+
+
+####	Gaia Config
+# Custom Setting File
+#export CUSTOM_SETTINGS="${GAIA_PATH}/build/config/custom-settings.json"
+#export CUSTOM_SETTINGS="$userconfig_dir/custom-settings.json"
+
+# Profile Output Directory
+#export PROFILE_FOLDER=profile-test
+
+# Enable Haida Features
+#export HAIDA=1
+
+# Disable First Time User Experience
+#export NOFTU=1
+
+# Display Device Density
+#export GAIA_DEV_PIXELS_PER_PX=1
+
+# Enable Gaia Developer Mode
+#export DEVICE_DEBUG=1
+# same as: REMOTE_DEBUGGER=1, NO_LOCK_SCREEN=1
+export REMOTE_DEBUGGER=1
+
+
+####	Localization
+export LOCALES_FILE="$userconfig_dir/languages.json"
+#export LOCALES_FILE="$userconfig_dir/gaia/locales/languages_all.json"
+
+# Gecko Localization
+export L10NBASEDIR="$userconfig_dir/gecko-l10n"
+#export MOZ_CHROME_MULTILOCALE="ja"
+
+# Gaia Localization
+export LOCALE_BASEDIR="$userconfig_dir/gaia-l10n"
+export GAIA_DEFAULT_LOCALE=ja
+export GAIA_INLINE_LOCALES=1
+
+
+####	Config Adjustment
+if [ "${B2G_DEBUG}" == "1" ]; then
+  export GECKO_OBJDIR=${GECKO_OBJDIR}-debug
+fi
