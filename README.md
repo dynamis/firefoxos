@@ -2,14 +2,18 @@
 ```
 init.sh
 ```
+* WARNING: It takes very long time to clone gaia repository.
 
 # build and flash Firefox OS
 ```
 cd B2G
 ./config.sh flame
+cp gaia/shared/locales/branding/official/branding.en-US.properties gaia/shared/locales/branding/official/branding.ja.properties
+cp gaia/shared/locales/branding/unofficial/branding.en-US.properties gaia/shared/locales/branding/unofficial/branding.ja.properties
 ./build.sh
 ./flash.sh
 ```
+* WARNING: It takes very long time to config (to clone many repositories).
 
 # build and flash Gaia only
 ```
