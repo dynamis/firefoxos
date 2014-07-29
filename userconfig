@@ -1,4 +1,11 @@
-userconfig_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+thisfile=${BASH_SOURCE:-$0}
+if [ -L $thisfile ]; then
+  # note: cannot use readlink with -f option in Mac
+  userconfig_dir=$(cd $(dirname $(readlink $thisfile)); pwd)
+else
+  userconfig_dir=$(cd $(dirname $thisfile); pwd)
+fi
+echo Loading userconfig and locale files from: $userconfig_dir
 
 ####	Build Environment
 # Select Compiler
@@ -38,6 +45,9 @@ export PRODUCTION=1
 # Target Application Set
 # GAIA_APP_TARGET = production|engineering|demo|dogfood
 #export GAIA_APP_TARGET=production
+
+# Additional Applications Directory
+export GAIA_OUTOFTREE_APP_SRCDIRS="$userconfig_dir/outoftree_apps"
 
 # Device Type
 # GAIA_DEVICE_TYPE=phone|tablet
