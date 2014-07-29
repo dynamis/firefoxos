@@ -8,8 +8,11 @@ init.sh
 ```
 cd B2G
 ./config.sh flame
+# copy branding properties file for ja locale
 cp gaia/shared/locales/branding/official/branding.en-US.properties gaia/shared/locales/branding/official/branding.ja.properties
 cp gaia/shared/locales/branding/unofficial/branding.en-US.properties gaia/shared/locales/branding/unofficial/branding.ja.properties
+# appry patch
+patch gaia/shared/resources/apn.json ../patches/apn.json.diff
 ./build.sh
 ./flash.sh
 ```
