@@ -17,8 +17,7 @@ ln -s ../userconfig B2G/.userconfig
 
 
 #### Setup Gaia Build Environment
-# get gaia files and symlink for outoftree_apps
+# get gaia files and copy branding properties file for ja locale
 git clone git@github.com:mozilla-b2g/gaia.git
-ln -s ../outoftree_apps gaia/outoftree_apps
 cp gaia/shared/locales/branding/official/branding.en-US.properties gaia/shared/locales/branding/official/branding.ja.properties
 cp gaia/shared/locales/branding/unofficial/branding.en-US.properties gaia/shared/locales/branding/unofficial/branding.ja.properties
