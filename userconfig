@@ -79,9 +79,10 @@ export GAIA_OUTOFTREE_APP_SRCDIRS="$userconfig_dir/outoftree_apps"
 #export GAIA_DEV_PIXELS_PER_PX=1
 
 # Enable Gaia Developer Mode
-#export DEVICE_DEBUG=1
-# same as: REMOTE_DEBUGGER=1, NO_LOCK_SCREEN=1
-export REMOTE_DEBUGGER=1
+export DEVICE_DEBUG=1
+# DEVICE_DEBUG=1 is same as REMOTE_DEBUGGER=1, NO_LOCK_SCREEN=1
+#export REMOTE_DEBUGGER=1
+#export NO_LOCK_SCREEN=1
 
 
 ####	Localization
