@@ -1,11 +1,6 @@
-# init
-```
-init.sh
-```
-* WARNING: It takes very long time to clone gaia repository.
-
 # build and flash Firefox OS
 ```
+./init.sh b2g
 cd B2G
 ./config.sh flame
 # copy branding properties file for ja locale
@@ -16,23 +11,29 @@ patch gaia/shared/resources/apn.json ../patches/apn.json.diff
 ./build.sh
 ./flash.sh
 ```
-* WARNING: It takes very long time to config (to clone many repositories).
+* WARNING: It takes very very long time (to clone many repositories).
 
 # build and flash Gaia only
 ```
+./init.sh gaia
+./init.sh l10n
 ./reset-gaia.sh
 ```
-* NOTE: Major version of Gecko/Gaia should be same.
 
-# build debug profile
+# build and flash Gaia v2.0
 ```
-./build-debugprofile.sh
+./init.sh gaia v2.0
+./init.sh l10n v2.0
+./reset-gaia.sh v2.0
 ```
+* NOTE: same for v1.4 or v1.3 branches
 
 # documents
 * https://developer.mozilla.org/ja/Firefox_OS/Platform/Gaia/Hacking
 * https://developer.mozilla.org/ja/Firefox_OS/Platform/Gaia/Build_System_Primer
 * https://developer.mozilla.org/ja/Firefox_OS/Customization_with_the_.userconfig_file
+* https://developer.mozilla.org/ja/Firefox_OS/Developing_Gaia/make_options_reference
+* https://developer.mozilla.org/ja/Firefox_OS/Developing_Gaia/Market_customizations_guide
 
 # relating repos
 * https://github.com/mozilla-b2g/B2G

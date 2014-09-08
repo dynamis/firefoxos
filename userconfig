@@ -40,6 +40,7 @@ export PYTHONPATH="$userconfig_dir/compare-locales/lib"
 # Make Official Branding Build
 export MOZILLA_OFFICIAL=1
 export PRODUCTION=1
+#export DEBUG=1
 #export DOGFOOD=1
 
 # Target Application Set
@@ -53,18 +54,21 @@ export GAIA_OUTOFTREE_APP_SRCDIRS="$userconfig_dir/outoftree_apps"
 # GAIA_DEVICE_TYPE=phone|tablet
 #export GAIA_DEVICE_TYPE=phone
 
+# Select Application Set
+# in eng, Marionette is enabled
 # VARIANT = eng|user|userdebug
-# eng: Marionette is enabled
-#export VARIANT=eng
+#export VARIANT=user
 
 # Install Apps into /system/b2g, not /data/local
 #export B2G_SYSTEM_APPS=1
 
+# Optimize (concatenating/compressing) JS files
+#export GAIA_OPTIMIZE=1
+
 
 ####	Gaia Config
-# Custom Setting File
-#export CUSTOM_SETTINGS="${GAIA_PATH}/build/config/custom-settings.json"
-#export CUSTOM_SETTINGS="$userconfig_dir/custom-settings.json"
+# Gaia Customization
+#export GAIA_DISTRIBUTION_DIR="$userconfig_dir/distribution"
 
 # Profile Output Directory
 #export PROFILE_FOLDER=profile-test
@@ -79,8 +83,8 @@ export GAIA_OUTOFTREE_APP_SRCDIRS="$userconfig_dir/outoftree_apps"
 #export GAIA_DEV_PIXELS_PER_PX=1
 
 # Enable Gaia Developer Mode
+# DEVICE_DEBUG: auto connect devtools, debug certified apps, no lockscreen
 export DEVICE_DEBUG=1
-# DEVICE_DEBUG=1 is same as REMOTE_DEBUGGER=1, NO_LOCK_SCREEN=1
 #export REMOTE_DEBUGGER=1
 #export NO_LOCK_SCREEN=1
 
@@ -98,6 +102,8 @@ export LOCALE_BASEDIR="$userconfig_dir/gaia-l10n"
 export GAIA_DEFAULT_LOCALE=ja
 export GAIA_INLINE_LOCALES=1
 
+# Gaia Keyboard Layouts
+export GAIA_KEYBOARD_LAYOUTS=en,jp-kanji
 
 ####	Config Adjustment
 if [ "${B2G_DEBUG}" == "1" ]; then
