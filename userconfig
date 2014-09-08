@@ -39,31 +39,30 @@ export PYTHONPATH="$userconfig_dir/compare-locales/lib"
 ####	Build Config
 # Make Official Branding Build
 export MOZILLA_OFFICIAL=1
-export PRODUCTION=1
-#export DEBUG=1
-#export DOGFOOD=1
-
-# Target Application Set
-# GAIA_APP_TARGET = production|engineering|demo|dogfood
-#export GAIA_APP_TARGET=production
-
-# Additional Applications Directory
-export GAIA_OUTOFTREE_APP_SRCDIRS="$userconfig_dir/outoftree_apps"
 
 # Device Type
 # GAIA_DEVICE_TYPE=phone|tablet
 #export GAIA_DEVICE_TYPE=phone
 
-# Select Application Set
-# in eng, Marionette is enabled
-# VARIANT = eng|user|userdebug
-#export VARIANT=user
+# Aliase for Production/Dogfood Build
+# PRODUCTION=1 => GAIA_APP_TARGET=production, GAIA_OPTIMIZE=1
+#export PRODUCTION=1
+# DOGFOOD=1 => GAIA_APP_TARGET=dogfood, GAIA_OPTIMIZE=1
+#export DOGFOOD=1
+
+# Target Application Set
+# GAIA_APP_TARGET = engineering|production|demo|dogfood
+export GAIA_APP_TARGET=production
+
+# Additional Applications Directory
+export GAIA_OUTOFTREE_APP_SRCDIRS="$userconfig_dir/outoftree_apps"
 
 # Install Apps into /system/b2g, not /data/local
 #export B2G_SYSTEM_APPS=1
+export B2G_SYSTEM_APPS=0
 
 # Optimize (concatenating/compressing) JS files
-#export GAIA_OPTIMIZE=1
+export GAIA_OPTIMIZE=1
 
 
 ####	Gaia Config
