@@ -1,3 +1,9 @@
+# Repos
+#B2GREPO=git@github.com:mozilla-b2g/B2G.git
+#GAIAREPO=git@github.com:mozilla-b2g/gaia.git
+B2GREPO=https://github.com/mozilla-b2g/B2G.git
+GAIAREPO=https://github.com/mozilla-b2g/gaia.git
+
 # Gaia path
 GAIADIR=gaia
 GAIA20DIR=gaia-2.0

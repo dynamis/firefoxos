@@ -30,7 +30,7 @@ init_b2g() {
   local b2gdir=${B2GDIR:-B2G}
   
   echo "clone B2G repo and make symlink for .userconfig..."
-  git clone git@github.com:mozilla-b2g/B2G.git $b2gdir
+  git clone $B2GREPO $b2gdir
   
   echo "make symlink for $b2gdir/.userconfig..."
   ln -s ../userconfig $b2gdir/.userconfig
@@ -66,10 +66,10 @@ init_gaia() {
   echo "clone gaia '$branch' branch to '$gaiadir' directory..."
   case "$branch" in
   "master")
-    git clone git@github.com:mozilla-b2g/gaia.git $gaiadir
+    git clone $GAIAREPO $gaiadir
     ;;
   *)
-    git clone -b $branch --single-branch git@github.com:mozilla-b2g/gaia.git $gaiadir
+    git clone -b $branch --single-branch $GAIAREPO $gaiadir
     ;;
   esac
   
