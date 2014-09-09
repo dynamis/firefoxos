@@ -76,7 +76,7 @@ init_gaia() {
   echo "copy branding locale files..."
   cp_gaia_branding $gaiadir $locale
   
-  echo "Run |./reset-gaia.sh| to build and flash Gaia part of the device."
+  echo "Run |./make-gaia.sh reset-gaia| to build and flash Gaia part of the device."
 }
 
 # init_l10n <branch> <locale>

@@ -17,14 +17,14 @@ patch gaia/shared/resources/apn.json ../patches/apn.json.diff
 ```
 ./init.sh gaia
 ./init.sh l10n
-./reset-gaia.sh
+./make-gaia.sh reset-gaia
 ```
 
 # build and flash Gaia v2.0
 ```
 ./init.sh gaia v2.0
 ./init.sh l10n v2.0
-./reset-gaia.sh v2.0
+./make-gaia.sh v2.0 reset-gaia
 ```
 * NOTE: same for v1.4 or v1.3 branches
 

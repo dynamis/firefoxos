@@ -56,6 +56,9 @@ case "$1" in
     hg -R $GAIA13LOCALEBASEDIR/ja pull -u
     hg -R $GECKO28L10NBASEDIR/ja pull -u -b $GECKO28BRANCH
     ;;
+  *)
+    echo "Invalid branch '$2' specified."
+    exit -1;
   esac
   ;;
 

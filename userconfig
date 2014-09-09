@@ -51,15 +51,16 @@ export MOZILLA_OFFICIAL=1
 #export DOGFOOD=1
 
 # Target Application Set
+# defined in gaia/build/config/<devicetype>/apps-<target>.list
 # GAIA_APP_TARGET = engineering|production|demo|dogfood
 export GAIA_APP_TARGET=production
 
 # Additional Applications Directory
 export GAIA_OUTOFTREE_APP_SRCDIRS="$userconfig_dir/outoftree_apps"
 
-# Install Apps into /system/b2g, not /data/local
+# Install Apps into /system/b2g or /data/local
 #export B2G_SYSTEM_APPS=1
-export B2G_SYSTEM_APPS=0
+#GAIA_INSTALL_PARENT=/system/b2g
 
 # Optimize (concatenating/compressing) JS files
 export GAIA_OPTIMIZE=1
